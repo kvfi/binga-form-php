@@ -1,6 +1,6 @@
 # Binga SDK form
 
-![http://binga.ma/img/images/logo.png](https://binga.ma)
+![Binga logo](http://binga.ma/img/images/logo.png)
 
 ## Requis
 * PHP 5.1+
