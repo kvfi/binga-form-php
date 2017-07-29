@@ -1,9 +1,10 @@
-<?
+<?php
 date_default_timezone_set('GMT'); // set default time zone
 
 // remplacer par le StoreId et PrivateKey fournis
 $storeId = "";
 $privateKey = "";
+$bingaUrl = "";
 
 // variable à modifier afin de refléter la command du marchand
 $amount_raw = 455.878; // montant à payer
@@ -21,22 +22,22 @@ $checksum = md5("PRE-PAY" . $amount . $storeId . $externalId . $email . $private
 <head>
   <title>Binga Form</title>
 </head>
-<form method="post" action="http://preprod.binga.ma:8080/bingaApi/order/prePay.action">
+<form method="post" action="<?php echo $bingaUrl ?>">
   <input type="hidden" name="apiVersion" value="1.1">
-    <input type="hidden" name="externalId" value="<? echo $externalId ?>">
-    <input type="hidden" name="expirationDate" value="<? echo $expirationDate ?>">
-    <input type="hidden" name="amount" value="<? echo $amount ?>">
-    <input type="hidden" name="buyerFirstName" value="<? echo $firstName ?>">
-    <input type="hidden" name="buyerLastName" value="<? echo $lastName ?>">
-    <input type="hidden" name="buyerEmail" value="<? echo $email ?>">
-    <input type="hidden" name="buyerAddress" value="<? echo $address ?>">
-    <input type="hidden" name="buyerPhone" value="<? echo $phone ?>">
-    <input type="hidden" name="storeId" value="<? echo $storeId ?>">
+    <input type="hidden" name="externalId" value="<?php echo $externalId ?>">
+    <input type="hidden" name="expirationDate" value="<?php echo $expirationDate ?>">
+    <input type="hidden" name="amount" value="<?php echo $amount ?>">
+    <input type="hidden" name="buyerFirstName" value="<?php echo $firstName ?>">
+    <input type="hidden" name="buyerLastName" value="<?php echo $lastName ?>">
+    <input type="hidden" name="buyerEmail" value="<?php echo $email ?>">
+    <input type="hidden" name="buyerAddress" value="<?php echo $address ?>">
+    <input type="hidden" name="buyerPhone" value="<?php echo $phone ?>">
+    <input type="hidden" name="storeId" value="<?php echo $storeId ?>">
     <input type="hidden" name="successUrl" value="http://www.example.com/successUrl">
     <input type="hidden" name="failureUrl" value="http://www.example.com/failureUrl">
     <input type="hidden" name="bookUrl" value="http://www.example.com/updateUrl">
     <input type="hidden" name="payUrl" value="http://www.example.com/payUrl">
-    <input type="hidden" name="orderCheckSum" value="<? echo $checksum ?>">
+    <input type="hidden" name="orderCheckSum" value="<?php echo $checksum ?>">
     <input type="submit" name="paiement" value="Payer avec binga">
   </form>
 </html>
