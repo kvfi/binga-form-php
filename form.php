@@ -9,7 +9,7 @@ $bingaUrl = "";
 // variable à modifier afin de refléter la command du marchand
 $amount_raw = 455.878; // montant à payer
 $externalId = 123456; // id de la transaction du marchand
-$expirationDate = date('Y-m-d\TH:i:se');
+$expirationDate = date('Y-m-d\TH:i:se', strtotime("+30 days")); // date d'expiration now + 30 days
 $amount = bcadd(round($amount_raw, 2), '0', 2); // arrondi  et converti en unités à virgule flottante en double précision
 $firstName = "Ahmad";
 $lastName = "bin Rochd";
