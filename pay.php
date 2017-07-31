@@ -22,3 +22,4 @@ try {
 } catch (Exception $e) {
   echo "000;" . date('Y-m-d\TH:i:se');
 }
+exit();
