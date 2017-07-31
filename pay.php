@@ -11,8 +11,8 @@ try {
     $order_check_sum = $_POST['orderCheckSum'];
     if (md5("PAY" . $_POST['amount'] . $storeId . $_POST['externalId'] . $_POST['buyerEmail'] . $privateKey) == $order_check_sum) {
       // Le client a effectivement payé chez Wafa cash
-      // Mettre la commande à jour sur base du code Binga précédemment insérer dans "book.php"
-      // Ne pas insérer des variables $_POST directement à la base de données, pensez à échapper les caractères spéciaux.
+      // Mettre la commande à jour sur base du code Binga précédemment inséré dans "book.php"
+      // Ne pas insérer des variables $_POST directement à la base de données, pensez à échapper les caractères spéciaux
       echo "100;" . date('Y-m-d\TH:i:se');
     } else {
       echo "000;" . date('Y-m-d\TH:i:se');
