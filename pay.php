@@ -20,5 +20,5 @@ try {
   }
 
 } catch (Exception $e) {
-  echo "100;" . date('Y-m-d\TH:i:se');
+  echo "000;" . date('Y-m-d\TH:i:se');
 }
